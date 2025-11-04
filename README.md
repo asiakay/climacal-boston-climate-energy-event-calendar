@@ -1,6 +1,6 @@
 # ClimaCal: Boston Climate & Energy Event Calendar
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/asiakay/climacal-boston-climate-energy-event-calendar)
 
 ClimaCal is a visually stunning, minimalist web application designed to showcase climate tech, energy, and sustainability events happening in the Boston area. The application presents a clean, readable, and aesthetically pleasing list of events, sourced from a provided dataset. The core focus is on user experience, achieved through a spacious layout, refined typography, and subtle micro-interactions. The main view consists of a chronological list of event cards, grouped by date. Each card provides essential information at a glance—title, time, venue, and descriptive tags—and links directly to the event source for more details. The design philosophy is 'less is more,' prioritizing clarity and effortless navigation.
 
@@ -103,4 +103,4 @@ This project is configured for seamless deployment to the Cloudflare global netw
 
 Alternatively, you can connect your GitHub repository to Cloudflare Pages for automatic deployments on every push to your main branch.
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/asiakay/climacal-boston-climate-energy-event-calendar)
