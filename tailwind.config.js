@@ -101,6 +101,10 @@ export default {
   				DEFAULT: 'hsl(var(--primary))',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
+            brand: {
+                DEFAULT: 'rgb(22, 163, 74)',
+                foreground: 'hsl(var(--primary-foreground))'
+            },
   			border: 'hsl(var(--border))',
   			ring: 'hsl(var(--ring))',
   			card: {

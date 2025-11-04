@@ -1,4 +1,3 @@
-import { parse } from 'date-fns';
 export interface ClimateEvent {
   date: Date;
   city: string | null;
@@ -23,12 +22,8 @@ const rawEvents = [
   { date_local: "2025-11-20", time_local: "16:30", city: "Boston", title: "NEWIEE’s Annual Members Meeting & Fall Fête 2025", host: "newiee.org", venue: "The Engine", address: "750 Main Street, Cambridge, MA, 02139, United States", link: "https://newiee.org/event/newiees-annual-members-meeting-fall-fete-2025-2/", source: "https://newiee.org/events/?ical=1", tags: "energy,decarbonization,sustainability,career" },
   { date_local: "2025-11-21", time_local: "12:00", city: "Boston", title: "NEWIEE Rising Professionals Committee Monthly Meetup", host: "newiee.org", venue: null, address: null, link: "https://newiee.org/event/newiee-rising-professionals-committee-monthly-meetup-16-2025-11-28/", source: "https://newiee.org/events/?ical=1", tags: "climate tech,energy,decarbonization,sustainability,policy,career,founders" },
 ];
-export const events: ClimateEvent[] = rawEvents.map(event => {
-  const dateTimeString = `${event.date_local} ${event.time_local}`;
-  const parsedDate = parse(dateTimeString, 'yyyy-MM-dd HH:mm', new Date());
-  return {
-    ...event,
-    date: parsedDate,
-    tags: event.tags ? event.tags.split(',').map(tag => tag.trim()) : [],
-  };
-});
+export const events: ClimateEvent[] = rawEvents.map(event => ({
+  ...event,
+  date: new Date(`${event.date_local}T${event.time_local === '00:00' ? '00:00:00' : event.time_local}`),
+  tags: event.tags ? event.tags.split(',').map(tag => tag.trim()) : [],
+}));
