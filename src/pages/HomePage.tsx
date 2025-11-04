@@ -35,10 +35,10 @@ export function HomePage() {
           <main>
             {Object.entries(groupedEvents).length > 0 ? (
               <div className="space-y-12">
-                {Object.entries(groupedEvents).map(([dateKey, dayEvents]) => (
-                  <section key={dateKey} className="animate-slide-up" style={{ animationDelay: `${Object.keys(groupedEvents).indexOf(dateKey) * 100}ms` }}>
+                {Object.entries(groupedEvents).map(([dateKey, dayEvents], groupIndex) => (
+                  <section key={dateKey} className="animate-slide-up" style={{ animationDelay: `${groupIndex * 100}ms`, animationFillMode: 'backwards' }}>
                     <h2 className="text-2xl font-semibold text-foreground mb-6 pb-2 border-b">
-                      {format(new Date(dateKey), "EEEE, MMMM d")}
+                      {format(dayEvents[0].date, "EEEE, MMMM d")}
                     </h2>
                     <div className="space-y-6">
                       {dayEvents.map((event, index) => (
@@ -56,7 +56,7 @@ export function HomePage() {
             )}
           </main>
           <footer className="text-center mt-24 text-muted-foreground text-sm">
-            <p>Built with ❤️ at Cloudflare</p>
+            <p>Built with ���️ at Cloudflare</p>
           </footer>
         </div>
       </div>
